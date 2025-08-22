@@ -3,45 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frej Dominik Portfolio</title>
+    <title>Frej Dominik</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Academic-style personal website with minimalist navigation.">
 </head>
 <body>
-    <header class="hero-section">
-        <h1>Frej Dominik - Photographer & Web Designer</h1>
-        <p>Capturing moments, designing experiences</p>
-        <a href="#portfolio" class="cta-button">View Portfolio</a>
-    </header>
-
-    <section id="portfolio" class="portfolio-gallery">
-        <h2>Portfolio</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="portfolio-item1.jpg" alt="Project 1">
-                <p>Project Title 1</p>
+    <input type="checkbox" id="nav-toggle" aria-hidden="true">
+    <div class="site">
+        <aside class="sidebar" role="navigation" aria-label="Primary">
+            <div class="brand">
+                <a class="brand-name" href="#home">Frej Dominik</a>
+                <div class="brand-subtitle">Academic Profile</div>
             </div>
-            <div class="grid-item">
-                <img src="portfolio-item2.jpg" alt="Project 2">
-                <p>Project Title 2</p>
-            </div>
-            <!-- Add more portfolio items here -->
-        </div>
-    </section>
+            <label class="menu-button" for="nav-toggle" aria-label="Toggle navigation">Menu</label>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li>
+                        <a href="#research">Research</a>
+                        <ul class="sub-list">
+                            <li><a href="#interests">Interests</a></li>
+                            <li><a href="#applications">Applications</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#publications">Publications</a>
+                        <ul class="sub-list">
+                            <li><a href="#journals">Journal Articles</a></li>
+                            <li><a href="#conferences">Conference Papers</a></li>
+                            <li><a href="#preprints">Preprints</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#presentations">Presentations</a></li>
+                    <li><a href="#software">Software</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Frej Dominik, a photographer and web designer with a passion for crafting visually appealing websites and capturing stunning photographs. My work revolves around creativity, precision, and bringing ideas to life through design and imagery.</p>
-    </section>
+        <main class="content" id="home" role="main">
+            <section id="about" class="section">
+                <h1>Frej Dominik</h1>
+                <p class="lead">[Your Title or Position]<br>[Your Department], [Your Institution]<br>[City], [Country]</p>
+                <div class="contact-row">
+                    <a href="mailto:frejdominik@example.com">frejdominik@example.com</a>
+                    <span class="dot">·</span>
+                    <a href="#" aria-label="Google Scholar profile link">scholar.google.com</a>
+                    <span class="dot">·</span>
+                    <a href="#" aria-label="ORCID profile link">orcid.org</a>
+                    <span class="dot">·</span>
+                    <a href="https://github.com/" target="_blank" rel="noopener">github.com/your-handle</a>
+                </div>
+                <p>
+                    Add a brief academic bio here: degrees, institutions, research group, and a one- to two-sentence overview of your work and interests.
+                </p>
+            </section>
 
-    <section class="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaborations or inquiries:</p>
-        <a href="mailto:frejdominik@example.com" class="contact-button">Email Me</a>
-    </section>
+            <section id="research" class="section">
+                <h2>Research</h2>
+                <h3 id="interests">Interests</h3>
+                <p>
+                    Describe your core research interests (e.g., constrained control, optimization under uncertainty, stochastic systems, online model adaptation).
+                </p>
+                <h3 id="applications">Applications</h3>
+                <ul class="bullet-list">
+                    <li>Application area 1 (e.g., energy management in electric vehicles)</li>
+                    <li>Application area 2 (e.g., trajectory optimization for VTOL aircraft)</li>
+                    <li>Application area 3 (e.g., biomedical control such as DBS)</li>
+                </ul>
+            </section>
 
-    <footer>
-        <p>&copy; 2024 Frej Dominik. All Rights Reserved.</p>
-    </footer>
+            <section id="publications" class="section">
+                <h2>Publications</h2>
+                <h3 id="journals">Journal Articles</h3>
+                <ol class="pub-list">
+                    <li>Author(s). Title. Journal, Year. <span class="pub-links"><a href="#">PDF</a> · <a href="#">DOI</a></span></li>
+                    <li>Author(s). Title. Journal, Year. <span class="pub-links"><a href="#">PDF</a> · <a href="#">DOI</a></span></li>
+                </ol>
+                <h3 id="conferences">Conference Papers</h3>
+                <ol class="pub-list">
+                    <li>Author(s). Title. Conference, Year. <span class="pub-links"><a href="#">PDF</a> · <a href="#">DOI</a></span></li>
+                </ol>
+                <h3 id="preprints">Preprints</h3>
+                <ol class="pub-list">
+                    <li>Author(s). Title. arXiv, Year. <span class="pub-links"><a href="#">PDF</a></span></li>
+                </ol>
+            </section>
+
+            <section id="presentations" class="section">
+                <h2>Presentations</h2>
+                <ul class="bullet-list">
+                    <li>Talk Title – Venue/Conference, Year. <a href="#">Slides</a></li>
+                    <li>Seminar Title – Institution, Year. <a href="#">Video</a></li>
+                </ul>
+            </section>
+
+            <section id="software" class="section">
+                <h2>Software</h2>
+                <ul class="soft-list">
+                    <li>
+                        <strong>Project Name</strong> – one-line description of the tool or library.
+                        <span class="soft-links"><a href="#">GitHub</a> · <a href="#">Docs</a></span>
+                    </li>
+                    <li>
+                        <strong>Project Name</strong> – another tool, with a brief description.
+                        <span class="soft-links"><a href="#">GitHub</a></span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="teaching" class="section">
+                <h2>Teaching</h2>
+                <ul class="bullet-list">
+                    <li>Course Name (Role), Institution, Year(s)</li>
+                    <li>Course Name (Role), Institution, Year(s)</li>
+                </ul>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <p>
+                    Email: <a href="mailto:frejdominik@example.com">frejdominik@example.com</a>
+                </p>
+                <p>
+                    Links: <a href="#">Google Scholar</a> · <a href="#">ORCID</a> · <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+                </p>
+                <address>
+                    [Your Department]<br>
+                    [Your Institution]<br>
+                    [Address Line 1]<br>
+                    [City], [Postal Code], [Country]
+                </address>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; <span id="year"></span> Frej Dominik</p>
+            </footer>
+        </main>
+    </div>
+    <script>
+    (function() {
+        var yearEl = document.getElementById('year');
+        if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+    })();
+    </script>
 </body>
 </html>

@@ -1,93 +1,88 @@
-/* Basic styling for the portfolio */
+/* Minimalist sidebar layout inspired by edz.us */
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 body {
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: #111;
+    background: #fff;
+    line-height: 1.6;
 }
 
-header.hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url('hero-background.jpg') no-repeat center center/cover;
-    height: 100vh;
-    text-align: center;
-    color: white;
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site { display: flex; min-height: 100dvh; }
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    width: 280px;
+    padding: 32px 24px;
+    border-right: 1px solid #eee;
+    background: #fff;
+    height: 100dvh;
 }
 
-h1 {
-    font-size: 4rem;
-    margin: 0;
-}
+.brand { margin-bottom: 28px; }
+.brand-name { font-weight: 700; font-size: 22px; letter-spacing: 0.2px; }
+.brand-subtitle { color: #666; font-size: 13px; margin-top: 2px; }
 
-p {
-    font-size: 1.5rem;
-}
+.menu-button { display: none; cursor: pointer; margin-top: 16px; color: #555; font-size: 14px; }
 
-.cta-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff6347;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+.nav { margin-top: 12px; }
+.nav-list { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+.nav-list > li { margin: 8px 0; }
+.nav-list a { color: #222; }
+.nav-list a:hover { color: #000; }
+.sub-list { list-style: none; margin: 6px 0 0 12px; padding: 0; }
+.sub-list li { margin: 4px 0; }
 
-.portfolio-gallery {
-    padding: 50px;
-    background-color: #f4f4f4;
-}
+/* Content */
+.content { flex: 1; padding: 40px 56px; max-width: 900px; }
+.section { margin: 40px 0; }
+.section:first-child { margin-top: 0; }
 
-.portfolio-gallery h2 {
-    text-align: center;
-    font-size: 2.5rem;
-}
+h1 { font-size: 32px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 22px; margin: 24px 0 12px; }
+h3 { font-size: 16px; margin: 16px 0 8px; color: #333; }
+.lead { color: #444; }
 
-.grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+.contact-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: #444; }
+.contact-row .dot { color: #bbb; }
 
-.grid-item {
-    margin: 20px;
-    flex-basis: calc(33.333% - 40px);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
+.bullet-list { padding-left: 18px; }
+.bullet-list li { margin: 6px 0; }
 
-.grid-item img {
-    width: 100%;
-    height: auto;
-}
+.pub-list { padding-left: 18px; }
+.pub-list li { margin: 8px 0; }
+.pub-links a { color: #555; }
+.pub-links a:hover { color: #000; }
 
-.about {
-    padding: 50px;
-    background-color: #fff;
-}
+.soft-list { list-style: none; padding: 0; margin: 0; }
+.soft-list li { margin: 10px 0; }
+.soft-links a { color: #555; }
 
-.about h2 {
-    text-align: center;
-}
+.footer { margin: 64px 0 16px; color: #777; font-size: 14px; }
 
-.contact {
-    text-align: center;
-    padding: 50px;
-    background-color: #eaeaea;
-}
+/* Responsive: collapse sidebar to top menu */
+#nav-toggle { display: none; }
 
-.contact-button {
-    padding: 10px 20px;
-    background-color: #ff6347;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+@media (max-width: 900px) {
+    .site { flex-direction: column; }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid #eee;
+    }
+    .menu-button { display: inline-block; }
+    .nav { display: none; }
+    #nav-toggle:checked ~ .site .sidebar .nav { display: block; margin-top: 8px; }
+    .content { padding: 24px 18px; }
 }
